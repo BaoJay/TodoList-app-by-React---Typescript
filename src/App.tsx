@@ -9,9 +9,13 @@ const todos = [
 ];
 //Should not return void type for App component
 function App() {
+  const todoAddHandler = (text: string) => {
+    console.log(text);
+  };
+
   return (
     <div className="App">
-      <NewTodo />
+      <NewTodo onAddTodo={todoAddHandler}/>
       {/* A component that adds todos */}
       <TodoList items={todos}/>
     </div>
